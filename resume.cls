@@ -45,6 +45,17 @@
   \addressskip
 }
 
+\def \tagline #1{\def\@tagline{#1}}
+\def \@tagline {}
+
+\def \printtagline {
+  \begingroup
+    \centerline{{\em \@tagline}}
+  \endgroup
+  \par
+  \smallskip
+}
+
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
@@ -61,6 +72,7 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname % Print the name specified with \name
+  \@ifundefined{@tagline}{}{\printtagline} % Print tagline if specified
   \@ifundefined{@addressone}{}{ % Print the first address if specified
     \printaddress{\@addressone}}
   \@ifundefined{@addresstwo}{}{ % Print the second address if specified
