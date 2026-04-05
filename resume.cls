@@ -128,7 +128,7 @@
   \smallskip
   \begin{list}{$\boldsymbol{\cdot}$}{%
     \leftmargin=1.5em
-    \setlength{\itemsep}{-0.5em}
+    \setlength{\itemsep}{0.1em}
     \setlength{\parsep}{0pt}
     \setlength{\topsep}{0pt}
   }%
