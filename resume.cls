@@ -1,125 +1,148 @@
 \ProvidesClass{resume}[Resume class]
 
-\LoadClass[10pt,letterpaper]{article} % Font size and paper type
+\LoadClass[10pt,letterpaper]{article}
 
-\usepackage[parfill]{parskip} % Remove paragraph indentation
-\usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
-\usepackage{ifthen} % Required for ifthenelse statements
-\usepackage{amsmath}
+%----------------------------------------------------------------------------------------
+%   PACKAGES
+%----------------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}        % UTF-8 input encoding
+\usepackage[T1]{fontenc}           % T1 font encoding for sharper output at small sizes
+\usepackage{lmodern}               % Improved Latin Modern fonts
+\usepackage[parfill]{parskip}      % Remove paragraph indentation
+\usepackage{array}                 % Required for boldface tabular columns
+\usepackage{ifthen}                % Required for conditional statements
+\usepackage{amsmath}               % Math support
+\usepackage[hidelinks]{hyperref}   % Clickable links in PDF without colored borders
 
 \pagestyle{empty} % Suppress page numbers
 
 %----------------------------------------------------------------------------------------
-%	HEADINGS COMMANDS: Commands for printing name and address
+%   HEADER COMMANDS
+%   The header prints three components in order:
+%     1. \name       -- your name, large and bold (required)
+%     2. \tagline    -- a short personal tagline in italics (optional)
+%     3. \contact    -- contact info, items separated by \contactSep (optional)
+%
+%   Usage in .tex:
+%     \name{Varun Chadha}
+%     \tagline{Building resilient software. Also, I make games.}
+%     \contact{(555) 555 5555 \contactSep you@email.com}
 %----------------------------------------------------------------------------------------
 
-\def \name#1{\def\@name{#1}} % Defines the \name command to set name
-\def \@name {} % Sets \@name to empty by default
+% Separator used between items in the \contact line
+\newcommand{\contactSep}{$\boldsymbol{\cdot}$\ }
 
-\def \addressSep {$\boldsymbol{\cdot} \:$} % Set default address separator to a diamond
+% \name: stores the name for rendering in the header
+\newcommand{\name}[1]{\def\@name{#1}}
+\def\@name{}
 
-% One, two or three address lines can be specified 
-\let \@addressone \relax
-\let \@addresstwo \relax
-\let \@addressthree \relax
+% \tagline: stores an optional italic tagline
+\newcommand{\tagline}[1]{\def\@tagline{#1}}
+\def\@tagline{}
 
-% \address command can be used to set the first, second, and third address (last 2 optional)
-\def \address #1{
-  \@ifundefined{@addresstwo}{
-    \def \@addresstwo {#1}
-  }{
-  \@ifundefined{@addressthree}{
-  \def \@addressthree {#1}
-  }{
-     \def \@addressone {#1}
-  }}
-}
+% \contact: stores an optional contact info line
+\newcommand{\contact}[1]{\def\@contact{#1}}
+\def\@contact{}
 
-% \printaddress is used to style an address line (given as input)
-\def \printaddress #1{
+% Internal: renders the name as a large bold centered heading
+\newcommand{\printname}{%
   \begingroup
-    \def \\ {\addressSep\ }
-    \centerline{#1}
-  \endgroup
-  \par
-  \addressskip
-}
-
-\def \tagline #1{\def\@tagline{#1}}
-\def \@tagline {}
-
-\def \printtagline {
-  \begingroup
-    \centerline{{\em \@tagline}}
-  \endgroup
-  \par
-  \smallskip
-}
-
-% \printname is used to print the name as a page header
-\def \printname {
-  \begingroup
-    \hfil{\namesize\bf \@name}\hfil
+    \hfil{\namesize\bfseries\@name}\hfil
     \nameskip\break
   \endgroup
 }
 
-%----------------------------------------------------------------------------------------
-%	PRINT THE HEADING LINES
-%----------------------------------------------------------------------------------------
+% Internal: renders the tagline centered and italic
+\newcommand{\printtagline}{%
+  \begingroup
+    \centerline{{\em\@tagline}}%
+  \endgroup
+  \par\smallskip
+}
 
-\let\ori@document=\document
-\renewcommand{\document}{
-  \ori@document  % Begin document
-  \printname % Print the name specified with \name
-  \@ifundefined{@tagline}{}{\printtagline} % Print tagline if specified
-  \@ifundefined{@addressone}{}{ % Print the first address if specified
-    \printaddress{\@addressone}}
-  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
-    \printaddress{\@addresstwo}}
-     \@ifundefined{@addressthree}{}{ % Print the third address if specified
-    \printaddress{\@addressthree}}
+% Internal: renders the contact line centered
+\newcommand{\printcontact}{%
+  \begingroup
+    \centerline{\@contact}%
+  \endgroup
+  \par\smallskip
+}
+
+% Render header components at document start
+\AtBeginDocument{%
+  \printname
+  \ifx\@tagline\empty\else\printtagline\fi
+  \ifx\@contact\empty\else\printcontact\fi
 }
 
 %----------------------------------------------------------------------------------------
-%	SECTION FORMATTING
+%   SECTION FORMATTING
+%   rSection: a named top-level section with a double rule and uppercase bold title
+%
+%   Usage: \begin{rSection}{Section Title} ... \end{rSection}
 %----------------------------------------------------------------------------------------
 
-% Defines the rSection environment for the large sections within the CV
-\newenvironment{rSection}[1]{ % 1 input argument - section name
+\newenvironment{rSection}[1]{%
   \sectionskip
-  \hrule width \hsize height 1pt \kern 0.5mm \hrule width \hsize height 1pt  % Horizontal line
+  % Double horizontal rule above section title
+  \hrule width\hsize height 1pt \kern 0.5mm \hrule width\hsize height 1pt
   \smallskip
-  {\large\bf\MakeUppercase{#1}} % Section title
-  \addressskip
-  \begin{list}{}{ % List for each individual item in the section
-    \setlength{\leftmargin}{1.5em} % Margin within the section
+  {\large\bfseries\MakeUppercase{#1}}
+  \smallskip
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.5em}
   }
   \item[]
-}{
+}{%
   \end{list}
 }
 
 %----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE FORMATTING
+%   SUBSECTION FORMATTING
+%   rSubsection: an entry within a section, such as a job, project, or degree
+%
+%   Arguments:
+%     #1 -- company / organisation (leave empty {} to suppress the second line)
+%     #2 -- date range
+%     #3 -- job title / role / project name
+%     #4 -- location (leave empty {} if unused)
+%
+%   Rendered layout:
+%     Line 1 (always):  [bold #3 title]      [italic #2 date]
+%     Line 2 (if #1):   [#1 company]         [italic #4 location]
+%
+%   Usage:
+%     \begin{rSubsection}{Capital One}{Jan 2023 -- Present}{Senior Engineer}{}
+%       \item Did a thing.
+%     \end{rSubsection}
 %----------------------------------------------------------------------------------------
 
-\newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #3} \hfill {\em #2} % Bold job title on the left, italic date on the right
- \ifthenelse{\equal{#1}{}}{}{ % If the first argument (company) is not specified, don't print the company line
-  \\
-  {#1} \hfill {\em #4} % Company name and location
-  }\smallskip
-  \begin{list}{$\boldsymbol{\cdot}$}{\leftmargin=1.5em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} \parsep 0pt \topsep 0pt % Compress items in list together for aesthetics
-  }{
+\newenvironment{rSubsection}[4]{%
+  {\bfseries #3} \hfill {\em #2}%
+  % Only print the company/location line if a company name was provided
+  \ifthenelse{\equal{#1}{}}{}{%
+    \\%
+    {#1} \hfill {\em #4}%
+  }%
+  \smallskip
+  \begin{list}{$\boldsymbol{\cdot}$}{%
+    \leftmargin=1.5em
+    \setlength{\itemsep}{-0.5em}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+  }%
+}{%
   \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
+  \vspace{0.5em}
 }
 
-% The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
-\def\namesize{\huge} % Size of the name at the top of the document
-\def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
-\def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
-\def\nameskip{\medskip} % The space after your name at the top
-\def\sectionskip{\medskip} % The space after the heading section
+%----------------------------------------------------------------------------------------
+%   SPACING DEFINITIONS
+%   Adjust these to control vertical rhythm throughout the document.
+%   Possible values: \smallskip, \medskip, \bigskip
+%----------------------------------------------------------------------------------------
+
+\def\namesize{\huge}       % Font size of the name in the header
+\def\nameskip{\medskip}    % Vertical space after the name
+\def\sectionskip{\medskip} % Vertical space before each section rule

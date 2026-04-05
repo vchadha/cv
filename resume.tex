@@ -1,30 +1,29 @@
 \documentclass{resume}
-\usepackage[utf8]{inputenc}
-\usepackage[left=0.75in,top=0.5in,right=0.75in,bottom=0.5in]{geometry} % Document margins
+\usepackage[left=0.75in,top=0.5in,right=0.75in,bottom=0.5in]{geometry}
 
 \name{Varun Chadha}
 \tagline{Building resilient, formally verified software. Also, I make games.}
-\address{(913) 549 2436 \addressSep vichadha@proton.me} % change to \contact
+\contact{(913) 549 2436 \contactSep \href{mailto:vichadha@proton.me}{vichadha@proton.me}}
 
 \begin{document}
 
 
 \begin{rSection}{Professional Experience}
 
-\begin{rSubsection}{Capital One}{Dec 2024 - Present}{Senior Software Engineer}{}
+\begin{rSubsection}{Capital One}{Dec 2024 --- Present}{Senior Software Engineer}{}
 \item Designed and deployed a transaction integrity and tamper detection system from scratch for our new platform, establishing a cryptographic audit trail to detect accidental and malicious data modification. Improves upon a proof-of-concept in the original system and is a core platform OKR.
-\item Achieved sub‑150 ms transaction processing through distributed system performance optimisation.
+\item Achieved sub-150 ms transaction processing through distributed system performance optimisation.
 \item Championed adoption of formal verification in distributed microservices, presenting at two internal engineering conferences and establishing a company-wide community of practice; driving toward director sponsorship and production pilots.
 \end{rSubsection}
 
-\begin{rSubsection}{Capital One}{Jul 2023 - Dec 2024}{Software Engineer}{}
+\begin{rSubsection}{Capital One}{Jul 2023 --- Dec 2024}{Software Engineer}{}
 \item Co-designed core financial transaction processing for a platform migration from a single-client system (12M accounts) to a generic, multi-line-of-business platform currently serving 50M accounts and architected to scale to 500M. Leveraged DynamoDB's native transaction model to eliminate the need for custom state management and conflict resolution across competing transactions.
 \item Redesigned schema and table structures for DynamoDB under a single-table paradigm, replacing Cassandra-era patterns to align with the new platform's scalability requirements. Collaborated directly with AWS consultants and support to audit and improve DynamoDB design and performance.
 \item Led triage and resolution of a multi-week Redis degradation in us-east-1 that was reducing application response times for Capital One Auto Finance. Diagnosed the root cause, proposed a fix which was adopted and fully resolved the incident.
 \item Designed regional failover and data recovery architecture for high availability; currently under review for implementation.
 \end{rSubsection}
 
-\begin{rSubsection}{Capital One}{Aug 2022 - Jul 2023}{Associate Software Engineer}{}
+\begin{rSubsection}{Capital One}{Aug 2022 --- Jul 2023}{Associate Software Engineer}{}
 \item Built core financial ledger microservices in Scala/ZIO, establishing patterns adopted across the broader transaction processing platform.
 \item Built monitoring dashboards and alerting systems in Splunk and New Relic, later conducting alerting audits to reduce noise and improve incident response efficiency.
 \item Led project to purge accounts securely from our financial ledger, ensuring regulatory compliance without performance degradation.
@@ -34,7 +33,6 @@
 \end{rSection}
 
 
-% \pagebreak here if Education header becomes orphaned at bottom of page
 \begin{rSection}{Education}
 
 \begin{rSubsection}{}{May 2022}{University of Wisconsin-Madison}{}
@@ -43,7 +41,7 @@
 
 \begin{rSubsection}{}{May 2020}{University of Kansas}{}
 \item B.S. in Computer Science (Distinction)
-\item Undergraduate Researcher — presented at CANSec 2019: {\bf Varun Chadha}, Jacob Marshall. Characterizing Sensor Input Spoofing Attacks.
+\item Undergraduate Researcher --- presented at CANSec 2019: \textbf{Varun Chadha}, Jacob Marshall. Characterizing Sensor Input Spoofing Attacks.
 \end{rSubsection}
 
 \end{rSection}
@@ -52,11 +50,11 @@
 \pagebreak
 \begin{rSection}{Research \& Publications}
 
-\begin{rSubsection}{University of Wisconsin-Madison}{2020 - 2022}{Graduate Research Assistant}{}
+\begin{rSubsection}{University of Wisconsin-Madison}{2020 --- 2022}{Graduate Research Assistant}{}
 \item Conducted research on IoT device detection for combating Intimate Partner Surveillance (IPS).
-\item Built a Python market analysis tool cataloguing spy devices across major retail categories, surfacing real-world misuse patterns from product reviews and informing efficacy testing of commercial spy detectors — which we determined to be largely ineffective.
+\item Built a Python market analysis tool cataloguing spy devices across major retail categories, surfacing real-world misuse patterns from product reviews and informing efficacy testing of commercial spy detectors --- which we determined to be largely ineffective.
 \item Simulated sensor spoofing attacks in self-driving car scenarios (CARLA, Openpilot), producing a technical analysis of Openpilot's architecture and demonstrating how sensor manipulation could induce crash-causing behavior.
-\item Rose Ceccio, Sophie Stephenson, {\bf Varun Chadha}, et al. Sneaky Spy Devices and Defective Detectors: The Ecosystem of Intimate Partner Surveillance with Covert Devices. USENIX Security, 2023.
+\item Rose Ceccio, Sophie Stephenson, \textbf{Varun Chadha}, et al. Sneaky Spy Devices and Defective Detectors: The Ecosystem of Intimate Partner Surveillance with Covert Devices. USENIX Security, 2023.
 \end{rSubsection}
 
 \end{rSection}
@@ -65,11 +63,9 @@
 \begin{rSection}{Technical Skills}
 
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Languages \& Frameworks    & Scala, ZIO, Java, Python, C/C++, Ruby on Rails
-\\
-Tools \& Platforms         & TLA+/PlusCal, Temporal, AWS, Splunk, New Relic
-\\
-Database Systems           & DynamoDB, Cassandra, PostgreSQL
+Languages \& Frameworks & Scala, ZIO, Java, Python, C/C++, Ruby on Rails \\
+Tools \& Platforms      & TLA+/PlusCal, Temporal, AWS, Splunk, New Relic  \\
+Database Systems        & DynamoDB, Cassandra, PostgreSQL
 \end{tabular}
 
 \end{rSection}
@@ -78,29 +74,27 @@ Database Systems           & DynamoDB, Cassandra, PostgreSQL
 \begin{rSection}{Projects \& Games}
 
 \begin{rSubsection}{EECS Survival}{2019}{Engine Lead}{}
-\item Built a custom Java game engine from scratch (LWJGL/OpenAL), implementing physics, collision detection, sprite animation, audio, and a BeanShell-based cutscene system; shipped as a full 5-level bullet-hell game complete with an automated input fuzzer and integration test suite.
+\item Built a custom Java game engine from scratch (LWJGL/OpenAL), implementing physics, collision detection, sprite animation, audio, and a BeanShell-based cutscene system; shipped as a full 5-level bullet-hell game with an automated input fuzzer and integration test suite.
 \end{rSubsection}
 
 \begin{rSubsection}{SPRAWL}{2021}{Team Lead}{}
-\item Led a 4-person team building a 3D narrative city-builder in Unity from concept to shipped itch.io release, coordinating design, programming, and art disciplines as technical lead and project manager.
+\item Led a 4-person team building a 3D narrative city-builder in Unity from concept to \href{https://chemelia.itch.io/sprawl}{shipped itch.io release}, coordinating design, programming, and art disciplines as technical lead and project manager.
 \end{rSubsection}
 
 \begin{rSubsection}{The Final Hour}{2025}{Hardware Engineer}{}
-\item Co-engineered an alternative controller for MADE @ THE MADE (2025) by soldering a salvaged children's toy clock into a functional USB gamepad; built the game in Unity/C\#.
+\item Co-engineered an alternative controller for MADE @ THE MADE by soldering a salvaged children's toy clock into a functional USB gamepad; built the game in Unity/C\#.
 \end{rSubsection}
 
-\begin{rSubsection}{Game Jams}{2021 - 2023}{}{}
-\item Recurring contributor across Ludum Dare, Global Game Jam, and DINOJAM3 — shipping playable Unity/C\# games under 48--72 hour constraints as part of a consistent 3--4 person team.
+\begin{rSubsection}{Game Jams}{2021 --- 2023}{}{}
+\item Recurring contributor across Ludum Dare, Global Game Jam, and DINOJAM3 --- shipping playable Unity/C\# games under 48--72 hour constraints as part of a consistent 3--4 person team.
 \end{rSubsection}
 
 \end{rSection}
 
 
-
-
 \begin{rSection}{Volunteer \& Leadership Experience}
 
-\begin{rSubsection}{}{2023 - 2025}{CODERS}{}
+\begin{rSubsection}{}{2023 --- 2025}{CODERS}{}
 \item Mentored and instructed cohorts of 5--10 students through a 10-week web/app development curriculum; organised site events and volunteer programmes across 4 semesters as Site Lead.
 \end{rSubsection}
 
