@@ -1,0 +1,98 @@
+\documentclass{resume}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+
+\name{Varun Chadha}
+\address{Building resilient, formally verified software. Also, I make games.}
+\address{(913) 549 2436 \addressSep vichadha at proton.me} % change to \contact
+
+\begin{document}
+
+
+\begin{rSection}{Professional Experience}
+
+\begin{rSubsection}{Capital One}{Dec 2024 - Present}{Senior Software Engineer}{}
+\item Designed and deployed a transaction integrity and tamper detection system from scratch for our new platform, establishing a cryptographic audit trail to detect accidental and malicious data modification. Improves upon a proof-of-concept in the original system and is a core platform OKR.
+\item Achieved sub‑150 ms transaction processing through distributed system performance optimisation.
+\item Demonstrated benefits of formal verification in distributed microservices to internal teams.
+\end{rSubsection}
+
+\begin{rSubsection}{Capital One}{Jul 2023 - Dec 2024}{Software Engineer}{}
+\item Co-designed core financial transaction processing for a platform migration from a single-client system (12M accounts) to a generic, multi-LOB platform currently serving 50M accounts and architected to scale to 500M. Leveraged DynamoDB's native transaction model to eliminate the need for custom state management and conflict resolution across competing transactions.
+\item Redesigned schema and table structures for DynamoDB under a single-table paradigm, replacing Cassandra-era patterns to align with the new platform's scalability requirements. Collaborated directly with AWS consultants and support to audit and improve DynamoDB design and performance.
+\item Led triage and resolution of a multi-week Redis degradation in us-east-1 that was reducing application response times for Capital One Auto Finance. Diagnosed the root cause, proposed a fix which was adopted and fully resolved the incident.
+\item Researched regional failover and data recovery strategies for high availability; work is currently under review with planned implementation later this year.
+\end{rSubsection}
+
+\begin{rSubsection}{Capital One}{Aug 2022 - Jul 2023}{Associate Software Engineer}{}
+\item Built core financial ledger microservices in Scala/ZIO, establishing patterns adopted across the broader transaction processing platform.
+\item Built monitoring dashboards and alerting systems in Splunk and New Relic, later conducting alerting audits to reduce noise and improve incident response efficiency.
+\item Led project to purge accounts securely from our financial ledger, ensuring regulatory compliance without performance degradation.
+\item Mentored on-call engineers.
+\end{rSubsection}
+
+\begin{rSubsection}{Early Experience}{2017 - 2021}{}{}
+\item Intern, Capital One (2021) – Built ML-based text extraction pipeline with in-memory caching and Kafka streams.
+\item Intern, Garmin (2019) – Fixed C/C++ bugs and contributed to UI features.
+\item Intern, Red Nova Labs (2017–2018) – Built APIs and SDKs for self-storage management software; implemented OAuth 2.0 authorization.
+\end{rSubsection}
+
+\end{rSection}
+
+
+\begin{rSection}{Research \& Publications}
+
+\begin{rSubsection}{University of Wisconsin-Madison}{2020 - 2022}{Graduate Research Assistant}{}
+\item Conducted research on IoT device detection for combating Intimate Partner Surveillance (IPS).
+\item Developed Python market analysis tool for consumer spy devices.
+\item Simulated sensor spoofing in self-driving car scenarios (CARLA, Openpilot).
+\end{rSubsection}
+
+\begin{rSubsection}{Selected Publications \& Presentations}{}{}{}
+\item Rose Ceccio, Sophie Stephenson, {\bf Varun Chadha}, Danny Yuxing Huang, Rahul Chatterjee, Sneaky Spy Devices and Defective Detectors: The Ecosystem of Intimate Partner Surveillance with Covert Devices, USENIX Security, 2023.
+\item {\bf Varun Chadha}, Jacob Marshall. Characterizing Sensor Input Spoofing Attacks. Central Area Networking and Security Workshop (CANSec), 2019
+\end{rSubsection}
+
+\end{rSection}
+
+
+\begin{rSection}{Education}
+
+\begin{rSubsection}{University of Wisconsin-Madison}{\em May 2022}{}{}
+\item M.S. in Computer Science (Security focus)
+\end{rSubsection}
+
+\begin{rSubsection}{University of Kansas}{\em May 2020}{}{}
+\item B.S. in Computer Science (Distinction)
+\end{rSubsection}
+
+\end{rSection}
+
+
+\begin{rSection}{Technical Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Languages \& Frameworks    & Scala, ZIO, Java, C/C++, Python, Ruby on Rails
+\\
+Database Systems           & DynamoDB, Cassandra, PostgreSQL
+\\
+Tools \& Platforms         & AWS, Splunk, New Relic, TLA+/PlusCal, Temporal
+\end{tabular}
+
+\end{rSection}
+
+
+\begin{rSection}{Volunteer \& Leadership Experience}
+
+\begin{rSubsection}{CODERS}{2023 - 2025}{}{}
+\item Instructor \& Site Lead; taught web/app development to middle \& high school students and organised volunteer programmes.
+\end{rSubsection}
+
+\begin{rSubsection}{SPARK}{2023}{}{}
+\item Mentored student in developing a Scratch-based educational climate awareness game.
+\end{rSubsection}
+
+\end{rSection}
+
+
+\end{document}
