@@ -78,7 +78,7 @@
   \sectionskip
   \hrule width \hsize height 1pt \kern 0.5mm \hrule width \hsize height 1pt  % Horizontal line
   \smallskip
-  \MakeUppercase{\bf #1} % Section title
+  {\large\bf\MakeUppercase{#1}} % Section title
   \addressskip
   \begin{list}{}{ % List for each individual item in the section
     \setlength{\leftmargin}{1.5em} % Margin within the section
