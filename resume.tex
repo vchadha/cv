@@ -4,7 +4,7 @@
 
 \name{Varun Chadha}
 \tagline{Building resilient, formally verified software. Also, I make games.}
-\address{(913) 549 2436 \addressSep vichadha at proton.me} % change to \contact
+\address{(913) 549 2436 \addressSep vichadha@proton.me} % change to \contact
 
 \begin{document}
 
@@ -14,24 +14,24 @@
 \begin{rSubsection}{Capital One}{Dec 2024 - Present}{Senior Software Engineer}{}
 \item Designed and deployed a transaction integrity and tamper detection system from scratch for our new platform, establishing a cryptographic audit trail to detect accidental and malicious data modification. Improves upon a proof-of-concept in the original system and is a core platform OKR.
 \item Achieved sub‑150 ms transaction processing through distributed system performance optimisation.
-\item Demonstrated benefits of formal verification in distributed microservices to internal teams.
+\item Championed adoption of formal verification in distributed microservices, presenting at two internal engineering conferences and establishing a company-wide community of practice; driving toward director sponsorship and production POCs.
 \end{rSubsection}
 
 \begin{rSubsection}{Capital One}{Jul 2023 - Dec 2024}{Software Engineer}{}
 \item Co-designed core financial transaction processing for a platform migration from a single-client system (12M accounts) to a generic, multi-LOB platform currently serving 50M accounts and architected to scale to 500M. Leveraged DynamoDB's native transaction model to eliminate the need for custom state management and conflict resolution across competing transactions.
 \item Redesigned schema and table structures for DynamoDB under a single-table paradigm, replacing Cassandra-era patterns to align with the new platform's scalability requirements. Collaborated directly with AWS consultants and support to audit and improve DynamoDB design and performance.
 \item Led triage and resolution of a multi-week Redis degradation in us-east-1 that was reducing application response times for Capital One Auto Finance. Diagnosed the root cause, proposed a fix which was adopted and fully resolved the incident.
-\item Researched regional failover and data recovery strategies for high availability; work is currently under review with planned implementation later this year.
+\item Designed regional failover and data recovery architecture for high availability; currently under review for implementation.
 \end{rSubsection}
 
 \begin{rSubsection}{Capital One}{Aug 2022 - Jul 2023}{Associate Software Engineer}{}
 \item Built core financial ledger microservices in Scala/ZIO, establishing patterns adopted across the broader transaction processing platform.
 \item Built monitoring dashboards and alerting systems in Splunk and New Relic, later conducting alerting audits to reduce noise and improve incident response efficiency.
 \item Led project to purge accounts securely from our financial ledger, ensuring regulatory compliance without performance degradation.
-\item Mentored on-call engineers.
+\item Mentored on-call engineers on incident response practices and platform internals.
 \end{rSubsection}
 
-\begin{rSubsection}{Early Experience}{2017 - 2021}{Software Engineer Intern}{}
+\begin{rSubsection}{}{2017 - 2021}{Early Experience}{}
 \item Intern, Capital One (2021) – Built ML-based text extraction pipeline with in-memory caching and Kafka streams.
 \item Intern, Garmin (2019) – Fixed C/C++ bugs and contributed to UI features.
 \item Intern, Red Nova Labs (2017–2018) – Built APIs and SDKs for self-storage management software; implemented OAuth 2.0 authorization.
@@ -40,6 +40,7 @@
 \end{rSection}
 
 
+% \pagebreak here if Education header becomes orphaned at bottom of page
 \begin{rSection}{Education}
 
 \begin{rSubsection}{}{\em May 2022}{University of Wisconsin-Madison}{}
@@ -57,8 +58,8 @@
 
 \begin{rSubsection}{University of Wisconsin-Madison}{2020 - 2022}{Graduate Research Assistant}{}
 \item Conducted research on IoT device detection for combating Intimate Partner Surveillance (IPS).
-\item Developed Python market analysis tool for consumer spy devices.
-\item Simulated sensor spoofing in self-driving car scenarios (CARLA, Openpilot).
+\item Built a Python market analysis tool cataloguing spy devices across major retail categories (Best Buy, Walmart, Amazon, Home Depot), surfacing real-world misuse patterns from product reviews and informing manual efficacy testing of commercial spy detectors — which we determined to be largely ineffective.
+\item Simulated sensor spoofing attacks in self-driving car scenarios using CARLA and Openpilot, producing a deep technical analysis of Openpilot's architecture and demonstrating how sensor manipulation could induce crash-causing behavior.
 \end{rSubsection}
 
 \begin{rSubsection}{}{}{Selected Publications \& Presentations}{}
@@ -86,10 +87,6 @@ Database Systems           & DynamoDB, Cassandra, PostgreSQL
 
 \begin{rSubsection}{}{2023 - 2025}{CODERS}{}
 \item Instructor \& Site Lead; taught web/app development to middle \& high school students and organised volunteer programmes.
-\end{rSubsection}
-
-\begin{rSubsection}{}{2023}{SPARK}{}
-\item Mentored student in developing a Scratch-based educational climate awareness game.
 \end{rSubsection}
 
 \end{rSection}

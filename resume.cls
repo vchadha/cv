@@ -106,7 +106,7 @@
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
  {\bf #3} \hfill {\em #2} % Bold job title on the left, italic date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the company and location line
+ \ifthenelse{\equal{#1}{}}{}{ % If the first argument (company) is not specified, don't print the company line
   \\
   {#1} \hfill {\em #4} % Company name and location
   }\smallskip
