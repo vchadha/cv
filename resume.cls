@@ -99,7 +99,7 @@
   {#1} \hfill {\em #4} % Company name and location
   }\smallskip
   \begin{list}{$\boldsymbol{\cdot}$}{\leftmargin=1.5em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+   \itemsep -0.5em \vspace{-0.5em} \parsep 0pt \topsep 0pt % Compress items in list together for aesthetics
   }{
   \end{list}
   \vspace{0.5em} % Some space after the list of bullet points
