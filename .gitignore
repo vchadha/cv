@@ -1,4 +1,7 @@
 # ---- LaTeX build artifacts ----
+build/
+out/
+
 *.aux
 *.log
 *.out

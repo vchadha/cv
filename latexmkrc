@@ -1,11 +1,11 @@
 # Use pdflatex
 $pdf_mode = 1;
 
-# Output PDF with the same name as the main tex file
-$out_dir = '.';
+# Build artifacts (aux, log, etc.) go here — keeps root clean
+$aux_dir = 'build';
 
-# Extra extensions to clean with `latexmk -c`
-$clean_ext = "aux log out fls fdb_latexmk synctex.gz";
+# Compiled PDF goes here
+$out_dir = 'out';
 
 # Open PDF automatically after build (uses macOS Preview)
 $pdf_previewer = 'open -a Preview';
