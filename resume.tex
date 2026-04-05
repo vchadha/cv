@@ -1,6 +1,6 @@
 \documentclass{resume}
 \usepackage[utf8]{inputenc}
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[left=0.75in,top=0.5in,right=0.75in,bottom=0.5in]{geometry} % Document margins
 
 \name{Varun Chadha}
 \tagline{Building resilient, formally verified software. Also, I make games.}
@@ -14,11 +14,11 @@
 \begin{rSubsection}{Capital One}{Dec 2024 - Present}{Senior Software Engineer}{}
 \item Designed and deployed a transaction integrity and tamper detection system from scratch for our new platform, establishing a cryptographic audit trail to detect accidental and malicious data modification. Improves upon a proof-of-concept in the original system and is a core platform OKR.
 \item Achieved sub‑150 ms transaction processing through distributed system performance optimisation.
-\item Championed adoption of formal verification in distributed microservices, presenting at two internal engineering conferences and establishing a company-wide community of practice; driving toward director sponsorship and production POCs.
+\item Championed adoption of formal verification in distributed microservices, presenting at two internal engineering conferences and establishing a company-wide community of practice; driving toward director sponsorship and production pilots.
 \end{rSubsection}
 
 \begin{rSubsection}{Capital One}{Jul 2023 - Dec 2024}{Software Engineer}{}
-\item Co-designed core financial transaction processing for a platform migration from a single-client system (12M accounts) to a generic, multi-LOB platform currently serving 50M accounts and architected to scale to 500M. Leveraged DynamoDB's native transaction model to eliminate the need for custom state management and conflict resolution across competing transactions.
+\item Co-designed core financial transaction processing for a platform migration from a single-client system (12M accounts) to a generic, multi-line-of-business platform currently serving 50M accounts and architected to scale to 500M. Leveraged DynamoDB's native transaction model to eliminate the need for custom state management and conflict resolution across competing transactions.
 \item Redesigned schema and table structures for DynamoDB under a single-table paradigm, replacing Cassandra-era patterns to align with the new platform's scalability requirements. Collaborated directly with AWS consultants and support to audit and improve DynamoDB design and performance.
 \item Led triage and resolution of a multi-week Redis degradation in us-east-1 that was reducing application response times for Capital One Auto Finance. Diagnosed the root cause, proposed a fix which was adopted and fully resolved the incident.
 \item Designed regional failover and data recovery architecture for high availability; currently under review for implementation.
@@ -31,24 +31,19 @@
 \item Mentored on-call engineers on incident response practices and platform internals.
 \end{rSubsection}
 
-\begin{rSubsection}{}{2017 - 2021}{Early Experience}{}
-\item Intern, Capital One (2021) – Built ML-based text extraction pipeline with in-memory caching and Kafka streams.
-\item Intern, Garmin (2019) – Fixed C/C++ bugs and contributed to UI features.
-\item Intern, Red Nova Labs (2017–2018) – Built APIs and SDKs for self-storage management software; implemented OAuth 2.0 authorization.
-\end{rSubsection}
-
 \end{rSection}
 
 
 % \pagebreak here if Education header becomes orphaned at bottom of page
 \begin{rSection}{Education}
 
-\begin{rSubsection}{}{\em May 2022}{University of Wisconsin-Madison}{}
+\begin{rSubsection}{}{May 2022}{University of Wisconsin-Madison}{}
 \item M.S. in Computer Science (Security focus)
 \end{rSubsection}
 
-\begin{rSubsection}{}{\em May 2020}{University of Kansas}{}
+\begin{rSubsection}{}{May 2020}{University of Kansas}{}
 \item B.S. in Computer Science (Distinction)
+\item Undergraduate Researcher — presented at CANSec 2019: {\bf Varun Chadha}, Jacob Marshall. Characterizing Sensor Input Spoofing Attacks.
 \end{rSubsection}
 
 \end{rSection}
@@ -57,14 +52,9 @@
 \begin{rSection}{Research \& Publications}
 
 \begin{rSubsection}{University of Wisconsin-Madison}{2020 - 2022}{Graduate Research Assistant}{}
-\item Conducted research on IoT device detection for combating Intimate Partner Surveillance (IPS).
-\item Built a Python market analysis tool cataloguing spy devices across major retail categories (Best Buy, Walmart, Amazon, Home Depot), surfacing real-world misuse patterns from product reviews and informing manual efficacy testing of commercial spy detectors — which we determined to be largely ineffective.
-\item Simulated sensor spoofing attacks in self-driving car scenarios using CARLA and Openpilot, producing a deep technical analysis of Openpilot's architecture and demonstrating how sensor manipulation could induce crash-causing behavior.
-\end{rSubsection}
-
-\begin{rSubsection}{}{}{Selected Publications \& Presentations}{}
-\item Rose Ceccio, Sophie Stephenson, {\bf Varun Chadha}, Danny Yuxing Huang, Rahul Chatterjee, Sneaky Spy Devices and Defective Detectors: The Ecosystem of Intimate Partner Surveillance with Covert Devices, USENIX Security, 2023.
-\item {\bf Varun Chadha}, Jacob Marshall. Characterizing Sensor Input Spoofing Attacks. Central Area Networking and Security Workshop (CANSec), 2019
+\item Built a Python market analysis tool cataloguing spy devices across major retail categories, surfacing real-world misuse patterns from product reviews and informing efficacy testing of commercial spy detectors — which we determined to be largely ineffective.
+\item Simulated sensor spoofing attacks in self-driving car scenarios (CARLA, Openpilot), producing a technical analysis of Openpilot's architecture and demonstrating how sensor manipulation could induce crash-causing behavior.
+\item Rose Ceccio, Sophie Stephenson, {\bf Varun Chadha}, et al. Sneaky Spy Devices and Defective Detectors: The Ecosystem of Intimate Partner Surveillance with Covert Devices. USENIX Security, 2023.
 \end{rSubsection}
 
 \end{rSection}
@@ -86,7 +76,7 @@ Database Systems           & DynamoDB, Cassandra, PostgreSQL
 \begin{rSection}{Volunteer \& Leadership Experience}
 
 \begin{rSubsection}{}{2023 - 2025}{CODERS}{}
-\item Instructor \& Site Lead; taught web/app development to middle \& high school students and organised volunteer programmes.
+\item Mentored and instructed cohorts of 5--10 students through a 10-week web/app development curriculum; organised site events and volunteer programmes across 4 semesters as Site Lead.
 \end{rSubsection}
 
 \end{rSection}

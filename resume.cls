@@ -1,6 +1,6 @@
 \ProvidesClass{resume}[Resume class]
 
-\LoadClass[11pt,letterpaper]{article} % Font size and paper type
+\LoadClass[10pt,letterpaper]{article} % Font size and paper type
 
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
@@ -122,4 +122,4 @@
 \def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
 \def\nameskip{\medskip} % The space after your name at the top
-\def\sectionskip{\bigskip} % The space after the heading section
+\def\sectionskip{\medskip} % The space after the heading section
