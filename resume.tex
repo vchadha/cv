@@ -11,23 +11,22 @@
 \begin{rSection}{Professional Experience}
 
 \begin{rSubsection}{Capital One}{Dec 2024 --- Present}{Senior Software Engineer}{}
-\item Designed and deployed a transaction integrity and tamper detection system from scratch for our new platform, establishing a cryptographic audit trail to detect accidental and malicious data modification. Improves upon a proof-of-concept in the original system and is a core platform OKR.
-\item Achieved sub-150 ms transaction processing through distributed system performance optimisation.
-\item Championed adoption of formal verification in distributed microservices, presenting at two internal engineering conferences and establishing a company-wide community of practice; driving toward director sponsorship and production pilots.
+\item Designed and deployed a cryptographic audit trail for transaction integrity and tamper detection on our new platform, satisfying internal data integrity and authenticity security requirements as a core platform OKR.
+\item Achieved ~83 ms transaction latency through targeted distributed system performance optimisation.
+\item Championed formal verification in distributed microservices --- presented at two internal engineering conferences and established a company-wide community of practice, building toward director sponsorship and production pilots.
 \end{rSubsection}
 
 \begin{rSubsection}{Capital One}{Jul 2023 --- Dec 2024}{Software Engineer}{}
-\item Co-designed core financial transaction processing for a platform migration from a single-client system (12M accounts) to a generic, multi-line-of-business platform currently serving 50M accounts and architected to scale to 500M. Leveraged DynamoDB's native transaction model to eliminate the need for custom state management and conflict resolution across competing transactions.
-\item Redesigned schema and table structures for DynamoDB under a single-table paradigm, replacing Cassandra-era patterns to align with the new platform's scalability requirements. Collaborated directly with AWS consultants and support to audit and improve DynamoDB design and performance.
-\item Led triage and resolution of a multi-week Redis degradation in us-east-1 that was reducing application response times for Capital One Auto Finance. Diagnosed the root cause, proposed a fix which was adopted and fully resolved the incident.
+\item Co-designed core transaction processing for a platform migration from a single-client system (12M accounts) to a multi-line-of-business platform serving 50M accounts and architected to scale to 500M, using DynamoDB's native transaction model to eliminate custom conflict resolution.
+\item Redesigned DynamoDB schemas under a single-table paradigm, replacing Cassandra-era patterns; collaborated with AWS consultants to audit and improve overall system performance.
+\item Diagnosed and resolved a multi-week Redis degradation in us-east-1 impacting Auto Finance response times; proposed fix was adopted and fully resolved the incident.
 \item Designed regional failover and data recovery architecture for high availability; currently under review for implementation.
 \end{rSubsection}
 
 \begin{rSubsection}{Capital One}{Aug 2022 --- Jul 2023}{Associate Software Engineer}{}
 \item Built core financial ledger microservices in Scala/ZIO, establishing patterns adopted across the broader transaction processing platform.
-\item Built monitoring dashboards and alerting systems in Splunk and New Relic, later conducting alerting audits to reduce noise and improve incident response efficiency.
-\item Led project to purge accounts securely from our financial ledger, ensuring regulatory compliance without performance degradation.
-\item Mentored on-call engineers on incident response practices and platform internals.
+\item Built Splunk and New Relic monitoring dashboards; audited alerting policies to remove stale alerts and identify coverage gaps, improving incident detection accuracy.
+\item Delivered a legally-compliant account purge system for Capital One Auto Finance, handling regulatory edge cases without performance degradation.
 \end{rSubsection}
 
 \end{rSection}
@@ -51,9 +50,9 @@
 \begin{rSection}{Research \& Publications}
 
 \begin{rSubsection}{University of Wisconsin-Madison}{2020 --- 2022}{Graduate Research Assistant}{}
-\item Conducted research on IoT device detection for combating Intimate Partner Surveillance (IPS).
-\item Built a Python market analysis tool cataloguing spy devices across major retail categories, surfacing real-world misuse patterns from product reviews and informing efficacy testing of commercial spy detectors --- which we determined to be largely ineffective.
-\item Simulated sensor spoofing attacks in self-driving car scenarios (CARLA, Openpilot), producing a technical analysis of Openpilot's architecture and demonstrating how sensor manipulation could induce crash-causing behavior.
+\item Researched IoT device detection techniques to combat Intimate Partner Surveillance (IPS).
+\item Built a Python market analysis tool cataloguing spy devices across major retail categories; surfaced real-world misuse patterns from product reviews and found commercial spy detectors to be largely ineffective.
+\item Simulated sensor spoofing attacks in autonomous vehicle scenarios (CARLA, Openpilot), producing a technical analysis of Openpilot's architecture and demonstrating crash-inducing attack vectors.
 \item Rose Ceccio, Sophie Stephenson, {\bfseries Varun Chadha}, et al. \href{https://www.usenix.org/system/files/usenixsecurity23-ceccio.pdf}{Sneaky Spy Devices and Defective Detectors: The Ecosystem of Intimate Partner Surveillance with Covert Devices}. USENIX Security, 2023.
 \end{rSubsection}
 
@@ -74,19 +73,19 @@ Database Systems        & DynamoDB, Cassandra, PostgreSQL
 \begin{rSection}{Projects \& Games}
 
 \begin{rSubsection}{Engine Lead}{2019}{\href{https://github.com/justinro-underscore/EECSurvival-Game}{EECS Survival}}{}
-\item Built a custom Java game engine from scratch (LWJGL/OpenAL), implementing physics, collision detection, sprite animation, audio, and a BeanShell-based cutscene system; shipped as a full 5-level bullet-hell game with an automated input fuzzer and integration test suite.
+\item Built a custom Java game engine from scratch (LWJGL/OpenAL) with physics, collision, animation, and audio systems; shipped as a 5-level bullet-hell game with an automated input fuzzer and integration test suite.
 \end{rSubsection}
 
 \begin{rSubsection}{Team Lead}{2021}{\href{https://chemelia.itch.io/sprawl}{SPRAWL}}{}
-\item Led a 4-person team building a 3D narrative city-builder in Unity from concept to shipped itch.io release, coordinating design, programming, and art disciplines as technical lead and project manager.
+\item Led a 4-person team from concept to \href{https://chemelia.itch.io/sprawl}{shipped itch.io release} on a 3D narrative city-builder in Unity, serving as both technical lead and project manager.
 \end{rSubsection}
 
 \begin{rSubsection}{Hardware Engineer}{2025}{\href{https://clayxavier.itch.io/the-final-hour}{The Final Hour}}{}
-\item Co-engineered an alternative controller for MADE @ THE MADE by soldering a salvaged children's toy clock into a functional USB gamepad; built the game in Unity/C\#.
+\item Hardware-engineered an alternative controller for MADE @ THE MADE by soldering a salvaged toy clock into a functional USB gamepad; shipped in Unity/C\#.
 \end{rSubsection}
 
 \begin{rSubsection}{}{2021 --- 2023}{Game Jams}{}
-\item Recurring contributor shipping playable Unity/C\# games under 48--72 hour constraints as part of a consistent team: \href{https://justinro-underscore.itch.io/lost-raturn}{Lost \& Raturn} (Global Game Jam 2021), \href{https://justinro-underscore.itch.io/tick-tick-za}{Tick Tick Za!} (Ludum Dare 51), \href{https://justinro-underscore.itch.io/dino-soar}{Dino Soar} (DINOJAM3 2023 --- 3rd place).
+\item Shipped Unity/C\# games under 48--72 hour constraints with a consistent team: \href{https://justinro-underscore.itch.io/lost-raturn}{Lost \& Raturn} (Global Game Jam 2021), \href{https://justinro-underscore.itch.io/tick-tick-za}{Tick Tick Za!} (Ludum Dare 51), \href{https://justinro-underscore.itch.io/dino-soar}{Dino Soar} (DINOJAM3 2023, 3rd place).
 \end{rSubsection}
 
 \end{rSection}
@@ -95,11 +94,7 @@ Database Systems        & DynamoDB, Cassandra, PostgreSQL
 \begin{rSection}{Volunteer \& Leadership Experience}
 
 \begin{rSubsection}{}{2023 --- 2025}{CODERS}{}
-\item Mentored and instructed cohorts of 5--10 students through a 10-week web/app development curriculum; organised site events and volunteer programmes across 4 semesters as Site Lead.
-\end{rSubsection}
-
-\begin{rSubsection}{}{2023}{SPARK}{}
-\item Mentored student in developing a Scratch-based educational climate awareness game.
+\item Instructed cohorts of 5--10 students through a 10-week web/app development curriculum and led site organisation across 4 semesters as Site Lead.
 \end{rSubsection}
 
 \end{rSection}
